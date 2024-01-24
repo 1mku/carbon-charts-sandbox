@@ -12,7 +12,12 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/react": "^3.0.9",
+    "@carbon/charts": "^1.13.23",
+    "@carbon/charts-react": "^1.13.23",
     "astro": "^4.2.4",
+    "d3": "^7.8.5",
+    "d3-cloud": "^1.2.7",
+    "d3-sankey": "^0.12.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3"

@@ -1,11 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import App from "../components/App";
+import "@carbon/charts-react/styles.css";
+import StackedAreaCharts from "../components/charts/StackedAreaCharts";
+import PieCharts from "../components/charts/PieCharts";
+import LineCharts from "../components/charts/LineCharts";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <App client:load />
+    <StackedAreaCharts client:load />
+    <PieCharts client:load />
+    <LineCharts client:load />
   </main>
 </Layout>
 
@@ -18,5 +23,9 @@ import App from "../components/App";
     color: white;
     font-size: 20px;
     line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 </style>
