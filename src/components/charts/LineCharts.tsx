@@ -6,6 +6,7 @@ export default function LineCharts() {
 		<>
 			<LineChart data={lineData} options={lineOptions} />
 			<LineChart data={lineTimeSeriesData} options={lineTimeSeriesOptions} />
+			<LineChart data={lineDualData} options={lineDualAcesSeriesOptions} />
 		</>
 	);
 }
@@ -88,5 +89,103 @@ export const lineTimeSeriesOptions: LineChartOptions = {
 		},
 	},
 	curve: "curveMonotoneX",
+	theme: ChartTheme.G100,
+};
+
+export const lineDualData = [
+	{
+		group: "Temperature",
+		date: "2019-01-01T05:00:00.000Z",
+		temp: 23,
+	},
+	{
+		group: "Temperature",
+		date: "2019-02-01T05:00:00.000Z",
+		temp: 15,
+	},
+	{
+		group: "Temperature",
+		date: "2019-03-01T05:00:00.000Z",
+		temp: 24,
+	},
+	{
+		group: "Temperature",
+		date: "2019-04-01T04:00:00.000Z",
+		temp: 33,
+	},
+	{
+		group: "Temperature",
+		date: "2019-05-01T04:00:00.000Z",
+		temp: 23,
+	},
+	{
+		group: "Temperature",
+		date: "2019-06-01T04:00:00.000Z",
+		temp: 32,
+	},
+	{
+		group: "Temperature",
+		date: "2019-07-01T04:00:00.000Z",
+		temp: 23,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-01-01T05:00:00.000Z",
+		rainfall: 50,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-02-01T05:00:00.000Z",
+		rainfall: 65,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-03-01T05:00:00.000Z",
+		rainfall: 35,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-04-01T04:00:00.000Z",
+		rainfall: 43,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-05-01T04:00:00.000Z",
+		rainfall: 53,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-06-01T04:00:00.000Z",
+		rainfall: 19,
+	},
+	{
+		group: "Rainfall",
+		date: "2019-07-01T04:00:00.000Z",
+		rainfall: 13,
+	},
+];
+
+export const lineDualAcesSeriesOptions = {
+	title: "Line + Line (dual axes)",
+	axes: {
+		left: {
+			title: "Temperature (°C)",
+			mapsTo: "temp",
+			domain: [-20, 50],
+		},
+		bottom: {
+			scaleType: ScaleTypes.TIME,
+			mapsTo: "date",
+			title: "Date",
+		},
+		right: {
+			title: "Rainfall (mm)",
+			mapsTo: "rainfall",
+			domain: [-20, 50],
+			correspondingDatasets: ["Rainfall"],
+		},
+	},
+	curve: "curveMonotoneX",
+	height: "400px",
 	theme: ChartTheme.G100,
 };
