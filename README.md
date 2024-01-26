@@ -1,3 +1,3 @@
 # Carbon charts sandbox
 
-Astro, React, [@carbon/charts](charts.carbondesignsystem.com)
+Astro, React, [@carbon/charts](https://charts.carbondesignsystem.com)
